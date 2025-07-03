@@ -1,0 +1,45 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sign Up - TechMart</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="logo">TechMart</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="shop.html">Shop</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+  <div class="login-form">
+    <h2>Create Your Account</h2>
+    <input type="text" placeholder="Full Name" required />
+    <input type="email" placeholder="Email" required />
+    <input type="password" placeholder="Password" required />
+    <button>Sign Up</button>
+    <p style="text-align:center; margin-top: 1rem;">
+      Already have an account? <a href="login.html">Login</a>
+    </p>
+  </div>
+  <footer>
+    <p style = " display: flex ;justify-content: center">&copy; 2025 TechMart. All rights reserved.</p>
+  </footer>
+  <script>
+    function signupUser(e) {
+      e.preventDefault();
+      const username = document.getElementById('signup-username').value;
+      const password = document.getElementById('signup-password').value;
+      localStorage.setItem('user', JSON.stringify({ username, password }));
+      alert("Signup successful!");
+      window.location.href = "login.html";
+    }
+  </script>
+</body>
+</html>
